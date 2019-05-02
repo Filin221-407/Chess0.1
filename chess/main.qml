@@ -1,7 +1,8 @@
-import QtQuick 2.9
+import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.3
+import "position.js" as MyScript
 
 
 Window {
@@ -12,13 +13,13 @@ Window {
     maximumWidth: 800
     title: qsTr("The Chess")
 
+
     Image {
         id: image
-        x: -105
-        y: 0
         anchors.fill: parent
         source: "qrc:/i.jpeg"
         fillMode: Image.PreserveAspectFit
+    }
 
         QtObject{
             id: board
@@ -31,19 +32,16 @@ Window {
              [ 0,  0,  0,  0,  0,  0,  0,  0],
              [ 6,  6,  6,  6,  6,  6,  6,  6],
              [ 1,  2,  3,  4,  5,  3,  2,  1]]
+
+
       }
-        function position(){
-         var k=0
-            for(var i=0; i<8; i++)
-                for(var j=0; j<8; j++)
-                {
-                    var n = board.board[i][j]
-                    var type = abs(n)
-                    var color = n>0?"white":""
-                }
-             }
+        Component.onCompleted: MyScript.setPos()
 
-          }
+
+            /*
+
+
+
             Figure {
                 boardX: 0
                 boardY: 7
@@ -244,15 +242,7 @@ Window {
                 type: 6
                 color: " "
             }
+
+*/
+
 }
-
-
-
-
-
-
-
-/*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
- ##^##*/

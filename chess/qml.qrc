@@ -16,5 +16,6 @@
         <file>hb.png</file>
         <file>eb.png</file>
         <file>Figure.qml</file>
+        <file>position.js</file>
     </qresource>
 </RCC>
